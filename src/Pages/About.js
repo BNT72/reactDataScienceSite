@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Col, Container, Nav, NavItem, NavLink, Row, TabContainer, TabContent, TabPane} from "react-bootstrap";
-
+import one from "../Assets/claster/61J-FZlWnro.jpeg"
+import two from "../Assets/claster/_EZqgACBT2Q.jpeg"
 class About extends Component {
     render() {
         return (
@@ -10,43 +11,88 @@ class About extends Component {
                         <Col sm={3}>
                             <Nav variant={"pills"} className={"flex-column mt-2"}>
                                 <NavItem>
-                                    <NavLink eventKey={"first"}>Design</NavLink>
+                                    <NavLink eventKey={"first"}>Кластерный анализ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink eventKey={"second"}>Team</NavLink>
+                                    <NavLink eventKey={"second"}>Регрессионный анализ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink eventKey={"third"}>Programming</NavLink>
+                                    <NavLink eventKey={"third"}>Классификационный анализ</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink eventKey={"fourth"}>Frameworks</NavLink>
+                                    <NavLink eventKey={"fourth"}>Програнизование</NavLink>
                                 </NavItem>
+
                                 <NavItem>
-                                    <NavLink eventKey={"fifth"}>Libraries</NavLink>
+                                    <NavLink eventKey={"fifth"}>Анализ последовательностей</NavLink>
+                                </NavItem>
+
+                                <NavItem>
+                                    <NavLink eventKey={"sixth"}>Нейронные сети</NavLink>
                                 </NavItem>
                             </Nav>
                         </Col>
                         <Col sm={9}>
                             <TabContent className={"mt-3"}>
                                 <TabPane eventKey={"first"}>
-                                        <img width={800} height={500} src={"https://cdn.dribbble.com/users/1187002/screenshots/11193299/drb_4x.jpg"}/>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur debitis dicta facilis incidunt laboriosam, nesciunt nihil quae, reprehenderit sit, totam voluptatibus. Error fugit id ipsam porro soluta, temporibus voluptatum?</p>
+                                    <p><b>Кластерный анализ</b> - многомерная статистическая процедура, выполняющая сбор данных, содержащих информацию о выборке объектов, и затем упорядочивающая объекты в сравнительно однородные группы. Задача кластеризации относится к статистической обработке, а также к широкому классу задач обучения без учителя.
+
+                                        Большинство исследователей  склоняются к тому, что впервые термин «кластерный анализ»  был предложен психологом Р. Триономruen. Впоследствии возник ряд терминов, которые в настоящее время принято считать синонимами термина «кластерный анализ»: автоматическая классификация, ботриология.
+
+                                        Спектр применений кластерного анализа очень широк: его используют в археологии, медицине, психологии, химии, биологии, государственном управлении, филологии, антропологии, маркетинге, социологии, геологии и других дисциплинах. Однако универсальность применения привела к появлению большого количества несовместимых терминов, методов и подходов, затрудняющих однозначное использование и непротиворечивую интерпретацию кластерного анализа.</p>
+                                    <img height={800}  width={800} className={"d-block w-60"} src={one} alt={"one"}/>
+                                    <img height={800}  width={800} className={"d-block w-60"} src={two} alt={"two"}/>
                                 </TabPane>
                                  <TabPane eventKey={"second"}>
-                                        <img  width={400}  src={"https://art-assorty.ru/wp-content/uploads/2019/08/258-1.jpg"}/>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur debitis dicta facilis incidunt laboriosam, nesciunt nihil quae, reprehenderit sit, totam voluptatibus. Error fugit id ipsam porro soluta, temporibus voluptatum?</p>
-                                </TabPane>
+                                    <p>Регрессионный анализ — набор статистических методов исследования влияния одной или нескольких независимых переменных X1,X2,...,Xn  на зависимую переменную Y.
+                                        Независимые переменные иначе называют регрессорами или предикторами, а зависимые переменные — критериальными. Терминология зависимых и независимых переменных отражает лишь математическую зависимость переменных, а не причинно-следственные отношения.
+                                        Наиболее распространённый вид регрессионного анализа — линейная регрессия, когда находят линейную функцию, которая, согласно определённым математическим критериям, наиболее соответствует данным. Например, в методе наименьших квадратов вычисляется прямая(или гиперплоскость), сумма квадратов между которой и данными минимальна.</p>
+                                     <img  width={400}  src={"https://www.machinelearningmastery.ru/img/0-842082-612895.png"}/>
+                                     <img  width={400}  src={"https://i.stack.imgur.com/4Z9cT.png"}/>
+                                 </TabPane>
+
                                  <TabPane  eventKey={"third"}>
-                                        <img width={400}  src={"https://i.pinimg.com/originals/1b/33/07/1b330700beab0801c6aa8a4392fd9461.jpg"}/>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur debitis dicta facilis incidunt laboriosam, nesciunt nihil quae, reprehenderit sit, totam voluptatibus. Error fugit id ipsam porro soluta, temporibus voluptatum?</p>
-                                </TabPane>
+                                    <p>Классификационный анализ – достаточно простой, применяется на начальном, описательном этапе научного исследования, позволяет систематизировать и классифицировать явления на уровне сходства и повторяемости.</p>
+                                     <img width={450}  src={"https://www.machinelearningmastery.ru/img/0-766106-783424.png"}/>
+                                     <img width={450}  src={"https://basegroup.ru/sites/default/files/article_img/decision_trees_example.gif"}/>
+                                 </TabPane>
                                  <TabPane eventKey={"fourth"}>
-                                        <img width={400} src={"https://img3.goodfon.ru/wallpaper/nbig/4/64/art-zuppon-devushka-babochki.jpg"}/>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur debitis dicta facilis incidunt laboriosam, nesciunt nihil quae, reprehenderit sit, totam voluptatibus. Error fugit id ipsam porro soluta, temporibus voluptatum?</p>
-                                </TabPane>
+                                    <p>Прогнозирование - установление функциональной зависимости между зависимыми и независимыми переменными.
+
+                                        Прогнозирование является распространенной и востребованной задачей во многих областях человеческой деятельности. В результате прогнозирования уменьшается риск принятия неверных, необоснованных или субъективных решений.
+
+                                        Примеры его задач: прогноз движения денежных средств, прогнозирование урожайности агрокультуры, прогнозирование финансовой устойчивости предприятия.
+
+                                        Типичной в сфере маркетинга является задача прогнозирования рынков (market forecasting). В результате решения данной задачи оцениваются перспективы развития конъюнктуры определенного рынка, изменения рыночных условий на будущие периоды, определяются тенденции рынка (структурные изменения, потребности покупателей, изменения цен).
+
+                                        Обычно в этой области решаются следующие практические задачи:
+
+                                        прогноз продаж товаров (например, с целью определения нормы товарного запаса);
+                                        прогнозирование продаж товаров, оказывающих влияние друг на друга;
+                                        прогноз продаж в зависимости от внешних факторов.
+                                        Помимо экономической и финансовой сферы, задачи прогнозирования ставятся в самых разнообразных областях: медицине, фармакологии; популярным сейчас становится политическое прогнозирование.
+
+                                        В самых общих чертах решение задачи прогнозирования сводится к решению таких подзадач:
+
+                                        выбор модели прогнозирования ;
+                                        анализ адекватности и точности построенного прогноза.</p>
+                                     <img width={600} src={"https://delosmi.ru/wp-content/uploads/2017/03/graph_explaination_PA_500_clr_31301.gif"}/>
+                                     <img width={600} src={"https://2bitcoins.ru/wp-content/uploads/2021/11/btc-4.png"}/>
+                                     <img width={600} src={"https://i.ytimg.com/vi/4AXAPBZJdhI/maxresdefault.jpg"}/>
+                                 </TabPane>
                                  <TabPane eventKey={"fifth"}>
-                                        <img width={400} src={"https://sun9-50.userapi.com/impf/6kExx9yQOugQoa_HSdYsGiLo-mBnVlKXeaAqSw/C1OJw_jNbQk.jpg?size=604x340&quality=96&sign=87a813aaafe0540886541d75474f9ef3"}/>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur debitis dicta facilis incidunt laboriosam, nesciunt nihil quae, reprehenderit sit, totam voluptatibus. Error fugit id ipsam porro soluta, temporibus voluptatum?</p>
+                                    <p>Алгоритм взаимосвязей или ассоциативных правил (AssociationRules) позволяет выявить часто встречающиеся сочетания элементов данных и использовать обнаруженные закономерности для построения прогноза. Классический пример - это анализ покупательской корзины, когда проводится поиск товаров, наиболее часто встречающихся в одном заказе (чеке, транзакции), после чего, на основе выявленных закономерностей становится возможной выдача рекомендаций. С помощью надстроек интеллектуального анализа данных для Excel подобная задача решается в "Использование инструментов "Prediction Calculator" и "ShoppingbasketAnalysis"" .
+
+                                        Пример набора правил, формируемых подобным, алгоритмом приведен на рис. 11.1. Предметная область - торговля велосипедами и связанными спортивными товарами. Для примера, первое правило говорит о том, что если в заказе присутствует держатель для велосипедной фляги и кепка, с высокой вероятностью будет приобретена и сама фляга.</p>
+                                     <img width={400} src={"https://image2.slideserve.com/3713431/slide3-l.jpg"}/>
+                                     <img width={400} src={"http://images.myshared.ru/6/640602/slide_18.jpg"}/>
+                                 </TabPane>
+
+                                <TabPane eventKey={"sixth"}>
+                                    <p>Нейронная сеть — математическая модель, а также её программное или аппаратное воплощение, построенная по принципу организации и функционирования биологических нейронных сетей — сетей нервных клеток живого организма.
+                                        Это понятие возникло при изучении процессов, протекающих в мозге, и при попытке смоделировать эти процессы. Первой такой попыткой были нейронные сети У. Маккалока и У. Питтса. После разработки алгоритмов обучения получаемые модели стали использовать в практических целях: в задачах прогнозирования, для распознавания образов, в задачах управления и др.</p>
+                                    <img width={400} src={"https://www.machinelearningmastery.ru/img/0-735777-967154.png"}/>
+                                    <img width={400} src={"https://avatars.mds.yandex.net/get-zen_doc/1101166/pub_5c65676a85460400ae46690f_5c659512e8db0200aeec470e/scale_1200"}/>
                                 </TabPane>
 
 

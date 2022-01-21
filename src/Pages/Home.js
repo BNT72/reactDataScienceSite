@@ -1,54 +1,69 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import CarouselBox from "../Components/CarouselBox";
-import {Button, Card, CardColumns, CardDeck, CardGroup, CardImg, Container} from "react-bootstrap";
+import song from "../Assets/a.mp3"
+import vid from "../Assets/v2.mp4";
 
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            play: false,
+            pause: true
+        };
+        this.url = "http://streaming.tdiradio.com:8000/house.mp3";
+        this.audio = new Audio(this.url);
+    }
+
+    play() {
+        this.setState({
+            play: true,
+            pause: false
+        });
+        console.log(this.audio);
+        this.audio.play();
+    }
+
+    pause() {
+        this.setState({play: false, pause: true});
+        this.audio.pause();
+    }
+
     render() {
         return (
-
             <>
+                <Player/>
                 <CarouselBox/>
-
-                <Container>
-                    <h2 className={"text-center m-4 "}>Our team</h2>
-                    <CardGroup className={"m-4 "}  >
-                        <Card bg={"light"} text={"dark"} border={"light"} >
-                            <Card.Img  variant={"top"}  src={"https://yt3.ggpht.com/a/AATXAJyJnXelBcQycuy4-CE5Y9z3KnjjrDXmTJC6Omrm=s900-c-k-c0xffffffff-no-rj-mo"}/>
-                            <Card.Body>
-                                <Card.Title>Developers</Card.Title>
-                                <Card.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eaque, facere? Harum?</Card.Text>
-                                <Button variant={"primary"}>About Team</Button>
-                            </Card.Body>
-                        </Card>
-                        <Card bg={"dark"} text={"light"} border={"light"}>
-                            <Card.Img  variant={"top"}  src={"https://yt3.ggpht.com/a/AATXAJwDkwnc-yPysgQfVfH1UT89G_jQdBuaKG5joRVv3Q=s900-c-k-c0xffffffff-no-rj-mo"}/>
-                            <Card.Body>
-                                <Card.Title>Developers</Card.Title>
-                                <Card.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eaque, facere? Harum?</Card.Text>
-                                <Button variant={"primary"}>About Team</Button>
-                            </Card.Body>
-                        </Card>
-                        <Card bg={"light"} text={"dark"} border={"light"}>
-                            <Card.Img  variant={"top"}  src={"https://yt3.ggpht.com/a/AATXAJzGSs8-uW2jzG0-VKUfG6gPWC91cRurCvhAFg=s900-c-k-c0xffffffff-no-rj-mo"}/>
-                            <Card.Body>
-                                <Card.Title>Developers</Card.Title>
-                                <Card.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eaque, facere? Harum?</Card.Text>
-                                <Button variant={"primary"}>About Team</Button>
-                            </Card.Body>
-                        </Card>
-                        <Card bg={"dark"} text={"light"} border={"light"}>
-                            <Card.Img  variant={"top"}  src={"https://yt3.ggpht.com/a/AATXAJxuPpNlhCuf17lxMzfWNo6jhq3bp31Mmh5KtWsv=s900-c-k-c0xffffffff-no-rj-mo"}/>
-                            <Card.Body>
-                                <Card.Title>Developers</Card.Title>
-                                <Card.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eaque, facere? Harum?</Card.Text>
-                                <Button variant={"primary"}>About Team</Button>
-                            </Card.Body>
-                        </Card>
-                    </CardGroup>
-                </Container>
+                <div className={"text-center"}>
+                    <video width="750" height="500" controls>
+                        <source src={vid} type="video/mp4"/>
+                    </video>
+                </div>
             </>
         );
     }
 }
 
 export default Home;
+
+function Player() {
+    const audioTune = new Audio(song);
+    const [playInLoop, setPlayInLoop] = useState(false);
+    useEffect(() => {
+        audioTune.load();
+    }, [])
+    const playSound = () => {
+        audioTune.play();
+    }
+
+    const pauseSound = () => {
+        audioTune.pause();
+    }
+    return (
+        <span>
+            <input type="button" className="btn btn-primary btn-lg btn-block" value="Play" onClick={playSound}></input>
+            <input type="button" className="btn btn-secondary btn-lg btn-block" value="Pause"
+                   onClick={pauseSound}></input>
+
+        </span>
+    );
+}
